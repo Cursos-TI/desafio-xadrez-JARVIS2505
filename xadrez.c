@@ -1,44 +1,58 @@
 #include <stdio.h>
 
 int main() {
-    // ========================
-    // SIMULAÇÃO DO MOVIMENTO DAS PEÇAS DE XADREZ
-    // Torre, Bispo e Rainha
-    // ========================
+    // simulação do movimento das peças: Torre, Bispo, Rainha e Cavalo
+    // Cada uma usa uma estrutura de repetição diferente
 
-    // ========================
-    // TORRE → movimenta-se 5 casas para a direita
-    // Estrutura de repetição: FOR
-    // ========================
-    int casas_torre = 5;
-    printf("Movimento da TORRE:\n");
-    for (int i = 1; i <= casas_torre; i++) {
+    //TORRE - 5 casa para direita
+    //Usando FOR
+
+    int casaTorre = 5;
+    printf("Movimento da torre: \n");
+
+    for(int i = 1; i <= casaTorre; i++){
         printf("Direita (%d)\n", i);
     }
 
-    // ========================
-    // BISPO → movimenta-se 5 casas na diagonal para cima e à direita
-    // Estrutura de repetição: WHILE
-    // ========================
-    int casas_bispo = 5;
-    int contador_bispo = 1;
-    printf("\nMovimento do BISPO:\n");
-    while (contador_bispo <= casas_bispo) {
-        printf("Cima, Direita (%d)\n", contador_bispo);
-        contador_bispo++;
+    //BISPO - 5 casa na diagonal (cima direita)
+    //Usando o WHILE
+    int casasBispo = 5;
+    int contBispo = 1;
+    printf("\nMovimento do BISPO: \n");
+
+    while (contBispo <= casasBispo){
+        printf("Cima, Direita (%d)\n", contBispo);
+        contBispo++;
     }
 
-    // ========================
-    // RAINHA → movimenta-se 8 casas para a esquerda
-    // Estrutura de repetição: DO-WHILE
-    // ========================
-    int casas_rainha = 8;
-    int contador_rainha = 1;
+    //RAINHA - 8 casas para a esquerda
+    // Usando DO-WHILE
+    int casasRainha = 8;
+    int contRainha = 1;
     printf("\nMovimento da RAINHA:\n");
-    do {
-        printf("Esquerda (%d)\n", contador_rainha);
-        contador_rainha++;
-    } while (contador_rainha <= casas_rainha);
 
+    do{
+        printf("Esquerda (%d)\n",contRainha);
+        contRainha++;
+    }while (contRainha <= casasRainha); 
+
+    //CAVALO - movimento em "L"
+    // 2 casas para baixo e 1 para esquerda
+    //Usando o FOR + WHILE (loops aninhados)
+    int casasBaixo = 2;
+    int casasEsquerda = 1;
+    int cont = 1;
+    printf("\nMovimento do CAVALO:\n");
+
+    //primeiro o cavalo desce 2 casas (for)
+    for(int i = 1; i <= casasBaixo; i++){
+        printf("Baixo (%d)\n", i);
+    }
+
+    //depois ele vai 1 casa para a esqueda (while)
+    while(cont <= casasEsquerda){
+        printf("Esquerda (%d)\n" ,cont);
+        cont++;
+    }
     return 0;
 }
